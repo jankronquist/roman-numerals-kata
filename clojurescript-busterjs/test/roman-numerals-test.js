@@ -25,5 +25,8 @@ buster.testCase('decimalToRoman', {
     },
     'returns IV for 4': function () {
         assert.equals(decimalToRoman.roman_numerals.decimal_to_roman(4), 'IV');
+    },
+    'returns XXXIV for 34': function () {
+        assert.equals(decimalToRoman.roman_numerals.decimal_to_roman(34), 'XXXIV');
     }
 });
