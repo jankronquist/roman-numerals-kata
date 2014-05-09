@@ -3,7 +3,10 @@
 (enable-console-print!)
 
 (defn ^:export decimal-to-roman [d]
-  "I")
+  (if (== d 1) "I" "II") 
+  
+ 
+)
 
 (defn -main [& args]
   (println (decimal-to-roman (first args))))
