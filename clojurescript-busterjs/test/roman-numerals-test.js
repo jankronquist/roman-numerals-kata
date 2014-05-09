@@ -49,5 +49,9 @@ buster.testCase('decimalToRoman', {
     },
     'returns MMMCMXCIV for 3994': function () {
         assert.equals(decimalToRoman.roman_numerals.decimal_to_roman(3994), 'MMMCMXCIV');
+    },
+    'returns 1 for I': function () {
+        assert.equals(decimalToRoman.roman_numerals.roman_to_decimal('I'), 1);
     }
+	
 });
