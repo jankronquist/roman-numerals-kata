@@ -17,7 +17,8 @@
 )
 
 (defn ^:export roman-to-decimal [d]
-  1)
+	(count (filter (fn [c] (= c \I)) (seq d)))
+  )
 
 (defn -main [& args]
   (println (decimal-to-roman (first args))))
