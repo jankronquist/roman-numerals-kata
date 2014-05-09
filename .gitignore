@@ -4,3 +4,5 @@ vim/.vim-flavor/
 vim/VimFlavor.lock
 
 .idea/
+
+clojurescript-busterjs/lib/roman-numerals.js
