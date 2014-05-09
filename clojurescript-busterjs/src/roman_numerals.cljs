@@ -34,7 +34,14 @@
 
 
 (defn roman-reducer [data c]
-  (let [char-value (get {\I 1 \V 5 \X 10 \L 50 \C 100 \D 500 \M 1000} c)
+  (let [char-value (condp = c
+                     \I 1
+                     \V 5
+                     \X 10
+                     \L 50
+                     \C 100
+                     \D 500
+                     \M 1000)
         add-or-sub (if (<= (:char data) char-value) + -)]
       {:value (add-or-sub (:value data) char-value) :char char-value}))
 
