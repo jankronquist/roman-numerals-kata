@@ -29,14 +29,20 @@ buster.testCase('decimalToRoman', {
     'returns V for 5': function () {
         assert.equals(decimalToRoman.roman_numerals.decimal_to_roman(5), 'V');
     },
-    'returns XL for 40': function () {
-        assert.equals(decimalToRoman.roman_numerals.decimal_to_roman(40), 'XL');
-    },
     'returns XXXIV for 34': function () {
         assert.equals(decimalToRoman.roman_numerals.decimal_to_roman(34), 'XXXIV');
     },
+    'returns XL for 40': function () {
+        assert.equals(decimalToRoman.roman_numerals.decimal_to_roman(40), 'XL');
+    },
+    'returns XLIX for 49': function () {
+        assert.equals(decimalToRoman.roman_numerals.decimal_to_roman(49), 'XLIX');
+    },
     'returns XC for 90': function () {
         assert.equals(decimalToRoman.roman_numerals.decimal_to_roman(90), 'XC');
+    },
+    'returns XCIX for 99': function () {
+        assert.equals(decimalToRoman.roman_numerals.decimal_to_roman(99), 'XCIX');
     },
     'returns CXI for 111': function () {
         assert.equals(decimalToRoman.roman_numerals.decimal_to_roman(111), 'CXI');

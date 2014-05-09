@@ -9,6 +9,7 @@
 
 (defn ^:export decimal-to-roman [d]
 	(str
+    (decimal-to-roman-digit (int (/ (mod d 10000) 1000)) "M" "V̄" "X̄")
     (decimal-to-roman-digit (int (/ (mod d 1000) 100)) "C" "D" "M")
     (decimal-to-roman-digit (int (/ (mod d 100) 10)) "X" "L" "C")
     (decimal-to-roman-digit (int (/ (mod d 10) 1)) "I" "V" "X")
