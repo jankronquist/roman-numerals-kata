@@ -19,5 +19,8 @@ buster.spec.expose();
 buster.testCase('decimalToRoman', {
     'returns I for 1': function () {
         assert.equals(decimalToRoman.roman_numerals.decimal_to_roman(1), 'I');
+    },
+    'returns II for 2': function () {
+        assert.equals(decimalToRoman.roman_numerals.decimal_to_roman(2), 'II');
     }
 });
