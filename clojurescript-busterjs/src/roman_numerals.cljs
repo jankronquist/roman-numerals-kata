@@ -14,8 +14,10 @@
     (decimal-to-roman-digit (int (/ (mod d 100) 10)) "X" "L" "C")
     (decimal-to-roman-digit (int (/ (mod d 10) 1)) "I" "V" "X")
 	)
-
 )
+
+(defn ^:export roman-to-decimal [d]
+  1)
 
 (defn -main [& args]
   (println (decimal-to-roman (first args))))

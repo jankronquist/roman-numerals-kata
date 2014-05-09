@@ -52,6 +52,9 @@ buster.testCase('decimalToRoman', {
     },
     'returns 1 for I': function () {
         assert.equals(decimalToRoman.roman_numerals.roman_to_decimal('I'), 1);
+    },
+    'returns 3 for III': function () {
+        assert.equals(decimalToRoman.roman_numerals.roman_to_decimal('III'), 3);
     }
-	
+
 });
