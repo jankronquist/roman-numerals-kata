@@ -3,7 +3,17 @@
 (enable-console-print!)
 
 (defn decimal-to-roman-digit [d one five ten]
-  (get ["" one (str one one) (str one one one) (str one five) five (str five one) (str five one one) (str five one one one) (str one ten)] d))
+  (condp = d
+    0 ""
+    1 one
+    2 (str one one)
+    3 (str one one one)
+    4 (str one five)
+    5 five
+    6 (str five one)
+    7 (str five one one)
+    8 (str five one one one)
+    9 (str one ten)))
 
 
 
