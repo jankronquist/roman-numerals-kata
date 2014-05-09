@@ -58,6 +58,14 @@ buster.testCase('decimalToRoman', {
     },
     'returns 4 for IV': function () {
         assert.equals(decimalToRoman.roman_numerals.roman_to_decimal('IV'), 4);
+    },
+    'returns 6 for VI': function () {
+        assert.equals(decimalToRoman.roman_numerals.roman_to_decimal('VI'), 6);
+    },
+    'returns 99 for XCIX': function () {
+        assert.equals(decimalToRoman.roman_numerals.roman_to_decimal('XCIX'), 99);
+    },
+    'returns 3994 for MMMCMXCIV': function () {
+        assert.equals(decimalToRoman.roman_numerals.roman_to_decimal('MMMCMXCIV'), 3994);
     }
-
 });

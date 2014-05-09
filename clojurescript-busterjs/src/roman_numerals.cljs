@@ -16,9 +16,20 @@
 	)
 )
 
+;VI -> IV
+
+;{:value 0 :char 0} I
+;{:value 1 :char 1} V
+;{:value 6 :char 5} V
+
+
+(defn roman-reducer [data c]
+  (let [char-value (get {\I 1 \V 5 \X 10 \L 50 \C 100 \D 500 \M 1000} c)
+        add-or-sub (if (<= (:char data) char-value) + -)]
+      {:value (add-or-sub (:value data) char-value) :char char-value}))
+
 (defn ^:export roman-to-decimal [d]
-	(count (filter (fn [c] (= c \I)) (seq d)))
-  )
+  (:value (reduce roman-reducer {:value 0 :char 0} (reverse (seq d)))))
 
 (defn -main [& args]
   (println (decimal-to-roman (first args))))
