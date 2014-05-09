@@ -2,12 +2,18 @@
 
 (enable-console-print!)
 
+(defn decimal-to-roman-digit [d one five ten]
+  (get ["" one (str one one) (str one one one) (str one five) five (str five one) (str five one one) (str five one one one) (str one ten)] d))
+
+
+
 (defn ^:export decimal-to-roman [d]
-	(str 
-	  (get ["" "X" "XX" "XXX" "XL" "L" "LX" "LXX" "LXXX" "XC" "C"] (int (/ d 10)))
-	  (get ["" "I" "II" "III" "IV" "V" "VI" "VII" "VIII" "IX"] (mod d 10))
+	(str
+    (decimal-to-roman-digit (int (/ (mod d 1000) 100)) "C" "D" "M")
+    (decimal-to-roman-digit (int (/ (mod d 100) 10)) "X" "L" "C")
+    (decimal-to-roman-digit (int (/ (mod d 10) 1)) "I" "V" "X")
 	)
-  
+
 )
 
 (defn -main [& args]
